@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:SnakeGame"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="BackgroundColor">#000000</SolidColorBrush>
+        <SolidColorBrush x:Key="GridBackgroundColor">#292929</SolidColorBrush>
+        <SolidColorBrush x:Key="GridLineColor">#494949</SolidColorBrush>
+        <SolidColorBrush x:Key="TextColor">#EBEBEB</SolidColorBrush>
+        <SolidColorBrush x:Key="OverlayColor">#EBEBEB</SolidColorBrush>
+        <FontFamily x:Key="MainFont">Assets/#Droid Sans Mono</FontFamily>
     </Application.Resources>
 </Application>

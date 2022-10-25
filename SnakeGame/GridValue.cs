@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SnakeGame
 {
-    internal class GridValue
+    public enum GridValue
     {
+        Empty = 0,
+        Snake,
+        Food,
+        Outside
     }
 }
