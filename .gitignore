@@ -7,6 +7,12 @@
 *.suo
 *.user
 *.sln.docstates
+*.metadata.v2
+*.projects.v2
+*.dtbcache.v2
+*.futdcache.v2
+*.g.i.cs
+*.i.cache
 
 # Build results
 [Dd]ebug/
