@@ -2,13 +2,25 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SnakeGame"
+             xmlns:viewModel="clr-namespace:SnakeGame.ViewModel"
+             xmlns:view="clr-namespace:SnakeGame.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="BackgroundColor">#000000</SolidColorBrush>
-        <SolidColorBrush x:Key="GridBackgroundColor">#292929</SolidColorBrush>
-        <SolidColorBrush x:Key="GridLineColor">#494949</SolidColorBrush>
-        <SolidColorBrush x:Key="TextColor">#EBEBEB</SolidColorBrush>
-        <SolidColorBrush x:Key="OverlayColor">#7f000000</SolidColorBrush>
-        <FontFamily x:Key="MainFont">Assets/#Droid Sans Mono</FontFamily>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="BackgroundColor">#000000</SolidColorBrush>
+            <SolidColorBrush x:Key="GridBackgroundColor">#292929</SolidColorBrush>
+            <SolidColorBrush x:Key="GridLineColor">#494949</SolidColorBrush>
+            <SolidColorBrush x:Key="TextColor">#EBEBEB</SolidColorBrush>
+            <SolidColorBrush x:Key="OverlayColor">#7f000000</SolidColorBrush>
+            <FontFamily x:Key="MainFont">Assets/#Droid Sans Mono</FontFamily>
+
+            <DataTemplate DataType="{x:Type viewModel:MainMenuViewModel}">
+                <view:MainMenuView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+                <view:GameView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

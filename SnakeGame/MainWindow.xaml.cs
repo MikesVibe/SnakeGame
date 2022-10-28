@@ -34,30 +34,30 @@ namespace SnakeGame
         public MainWindow()
         {
             InitializeComponent();
-            gridImages = SetupGrid();
+            //gridImages = SetupGrid();
             gameState = new GameState(rows, cols);
         }
 
-        private async Task RunGame()
-        {
-            Draw();
-            Overlay.Visibility = Visibility.Hidden;
-            await GameLoop();
-        }
+        //private async Task RunGame()
+        //{
+        //    Draw();
+        //    Overlay.Visibility = Visibility.Hidden;
+        //    await GameLoop();
+        //}
         private async void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (Overlay.Visibility == Visibility.Visible)
-            {
-                e.Handled = true;
-            }
-            if (!gameRunning)
-            {
-                gameRunning = true;
-                await RunGame();
-                gameRunning = false;
-            }
+            //if (Overlay.Visibility == Visibility.Visible)
+            //{
+            //    e.Handled = true;
+            //}
+            //if (!gameRunning)
+            //{
+            //    gameRunning = true;
+            //    await RunGame();
+            //    gameRunning = false;
+            //}
         }
-            private void Window_KeyDown(object sender, KeyEventArgs e)
+        private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if(gameState.GameOver)
             {
@@ -87,37 +87,37 @@ namespace SnakeGame
             {
                 await Task.Delay(100);
                 gameState.Move();
-                Draw();
+                //Draw();
             }
         }
 
 
-        private Image[,] SetupGrid()
-        {
-            Image[,] images = new Image[rows, cols];
-            GameGrid.Rows = rows;
-            GameGrid.Columns = cols;
+        //private Image[,] SetupGrid()
+        //{
+        //    Image[,] images = new Image[rows, cols];
+        //    GameGrid.Rows = rows;
+        //    GameGrid.Columns = cols;
 
-            for (int r = 0; r < rows; r++)
-            {
-                for (int c = 0; c < cols; c++)
-                {
-                    Image img = new Image()
-                    {
-                        Source = Images.Empty
-                    };
-                    images[r, c] = img;
-                    GameGrid.Children.Add(img);
-                }
-            }
+        //    for (int r = 0; r < rows; r++)
+        //    {
+        //        for (int c = 0; c < cols; c++)
+        //        {
+        //            Image img = new Image()
+        //            {
+        //                Source = Images.Empty
+        //            };
+        //            images[r, c] = img;
+        //            GameGrid.Children.Add(img);
+        //        }
+        //    }
 
-            return images;
-        }
-        private void Draw()
-        {
-            DrawGrid();
-            ScoreText.Text = $"SCORE: {gameState.Score}";
-        }
+        //    return images;
+        //}
+        //private void Draw()
+        //{
+        //    DrawGrid();
+        //    ScoreText.Text = $"SCORE: {gameState.Score}";
+        //}
 
         private void DrawGrid()
         {

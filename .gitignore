@@ -13,6 +13,7 @@
 *.futdcache.v2
 *.g.i.cs
 *.i.cache
+.vs/
 
 # Build results
 [Dd]ebug/
