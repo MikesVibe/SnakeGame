@@ -21,12 +21,13 @@ namespace SnakeGame
 
         public GameState(int rows, int cols)
         {
+
             Rows = rows;
             Cols = cols;
             Grid = new GridValue[rows, cols];
             Dir = Direction.Right;
             Score = 0;
-
+            GameOver = false;
             AddSnake();
             AddFood();
         }

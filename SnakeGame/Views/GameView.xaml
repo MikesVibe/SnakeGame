@@ -4,28 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SnakeGame.Views"
+             xmlns:viewModel="clr-namespace:SnakeGame.ViewModel"
              mc:Ignorable="d" 
-             Height="800" Width="800">
+             Height="800" Width="800"
+             KeyDown="Window_KeyDown"
+             PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
 
-
-    <Viewbox>
-        <Grid>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <ContentControl Content="{Binding CurrentView}"/>
-
-            <TextBlock x:Name="ScoreText"
+        <TextBlock x:Name="ScoreText"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Text="SCORE: 0"
                    FontSize="22"
                    Margin="10"
                    />
-            <Border x:Name="GridBorder"
+        <Border x:Name="GridBorder"
                 Grid.Row="1"
                 BorderBrush="{StaticResource GridLineColor}"
                 BorderThickness="1.5"
@@ -34,15 +34,15 @@
                 RenderOptions.EdgeMode="Aliased"
                 Margin="20,0,20,20">
 
-                <UniformGrid x:Name="GameGrid"
+            <UniformGrid x:Name="GameGrid"
                          Width="600"
                          Height="600"
                          Background="{StaticResource GridBackgroundColor}"
                          SnapsToDevicePixels="True"
                          RenderOptions.BitmapScalingMode="HighQuality">
-                </UniformGrid>
-            </Border>
-            <Border x:Name="Overlay"
+            </UniformGrid>
+        </Border>
+        <Border x:Name="Overlay"
                 Grid.Row="1"
                 Background="{StaticResource OverlayColor}"
                 Width="{Binding Path=ActualWidth, ElementName=GridBorder}"
@@ -50,16 +50,14 @@
                 Margin="{Binding Path=Margin, ElementName=GridBorder}"
                 RenderOptions.EdgeMode="Aliased">
 
-                <TextBlock x:Name="OverlayText"
+            <TextBlock x:Name="OverlayText"
                            Text="PAUSED"
                            FontSize="26"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            TextWrapping="Wrap"/>
-            </Border>
-        </Grid>
-
-    </Viewbox>
+        </Border>
+    </Grid>
 
 
 </UserControl>

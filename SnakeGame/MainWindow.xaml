@@ -12,23 +12,13 @@
         Foreground="{StaticResource TextColor}"
         FontFamily="{StaticResource MainFont}"
         WindowStartupLocation="CenterScreen"
-        PreviewKeyDown="Window_PreviewKeyDown"
+        Content="{Binding CurrentView}"
         KeyDown="Window_KeyDown">
     
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
-    <Viewbox>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <ContentControl Content="{Binding CurrentView}"/>
-
-        </Grid>
-    </Viewbox>
     
 
 </Window>

@@ -8,7 +8,7 @@ namespace SnakeGame.ViewModel
 {
     class MainViewModel : ObservableObject
     {
-        public RelayCommand MainMenuViewCommand{ get; set; }
+        //public RelayCommand MainMenuViewCommand{ get; set; }
         public RelayCommand GameViewCommand{ get; set; }
 
         public MainMenuViewModel MainMenuVM { get; set; }
@@ -28,12 +28,13 @@ namespace SnakeGame.ViewModel
         {
             MainMenuVM = new MainMenuViewModel();
             GameVM = new GameViewModel();
-            CurrentView = MainMenuVM;
+            //CurrentView = MainMenuVM;
+            CurrentView = GameVM;
 
-            MainMenuViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = MainMenuVM;
-            });
+            //MainMenuViewCommand = new RelayCommand(o =>
+            //{
+            //    CurrentView = MainMenuVM;
+            //});
 
             GameViewCommand = new RelayCommand(o =>
             {
