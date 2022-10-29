@@ -13,10 +13,12 @@
         Foreground="{StaticResource TextColor}"
         FontFamily="{StaticResource MainFont}"
         WindowStartupLocation="CenterScreen"
+        
         >
 
     <Grid>
-        <View:MainMenuView DataContext="{Binding GameViewModel}"/>
+        <View:MainMenuView DataContext="{Binding CurrentView}"/>
+
     </Grid>
 
 

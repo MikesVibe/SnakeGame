@@ -39,24 +39,6 @@ namespace SnakeGame.ViewModel
             }
         }
 
-        public void MainView_KeyDown(object sender, KeyEventArgs e)
-        {
-           string name =  e.Key.ToString();
-           string name1 =  e.Key.ToString();
-        }
-
-
-
-        //public ICommand MyProperty
-        //{
-        //    get { return (ICommand)GetValue(MyPropertyProperty); }
-        //    set { SetValue(MyPropertyProperty, value); }
-        //}
-
-        //// Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty MyPropertyProperty =
-        //    DependencyProperty.Register("MyProperty", typeof(int), typeof(MainViewModel), new PropertyMetadata(null));
-
 
 
 

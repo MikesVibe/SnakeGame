@@ -26,4 +26,8 @@
     <Resource Include="Assets\Head.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
