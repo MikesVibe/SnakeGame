@@ -6,11 +6,9 @@
              xmlns:local="clr-namespace:SnakeGame.Views"
              xmlns:viewModel="clr-namespace:SnakeGame.ViewModel"
              mc:Ignorable="d" 
-             Height="800" Width="800"
-             KeyDown="Window_KeyDown"
-             PreviewKeyDown="Window_PreviewKeyDown">
+             Height="800" Width="800">
 
-    <Grid>
+    <Grid >
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

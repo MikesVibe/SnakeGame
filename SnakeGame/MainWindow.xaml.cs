@@ -25,11 +25,6 @@ namespace SnakeGame
             InitializeComponent();
 
         }
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            //SnakeGame.Views.GameView.Window_PreviewKeyDown(sender, e)
-            //MessageBox.Show(e.Key.ToString());
 
-        }
     }
 }

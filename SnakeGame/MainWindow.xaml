@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SnakeGame"
         xmlns:viewModel="clr-namespace:SnakeGame.ViewModel"
+        xmlns:View="clr-namespace:SnakeGame.Views"
         mc:Ignorable="d"
         Title="Snake" Width="800" Height="800"
         MinHeight="400" MinWidth="400"
@@ -12,12 +13,13 @@
         Foreground="{StaticResource TextColor}"
         FontFamily="{StaticResource MainFont}"
         WindowStartupLocation="CenterScreen"
-        Content="{Binding CurrentView}"
-        KeyDown="Window_KeyDown">
-    
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
+        >
+
+    <Grid>
+        <View:MainMenuView DataContext="{Binding GameViewModel}"/>
+    </Grid>
+
+
 
     
 

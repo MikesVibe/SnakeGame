@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:SnakeGame.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -13,6 +14,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        
+        
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="150"/>
@@ -22,7 +25,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="150"/>
             </Grid.RowDefinitions>
-
+            
             <TextBlock x:Name="GameTitle"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
@@ -31,6 +34,9 @@
                    Grid.Row="0"
                    />
 
+            <Button Grid.Row="1" Command="{Binding StartGame}" Content="Start Game"/>
+            <Button Grid.Row="2" Command="{Binding Options}"  Content="Options"/>
+            <Button Grid.Row="3" Command="{Binding Exit}" Content="Exit"/>
         </Grid>
         
         

@@ -16,6 +16,20 @@ namespace SnakeGame.Views
     /// </summary>
     public partial class GameView : UserControl
     {
+
+
+        public ICommand KeyPressedCommand
+        {
+            get { return (ICommand)GetValue(KeyPressedCommandProperty); }
+            set { SetValue(KeyPressedCommandProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for KeyPressedCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty KeyPressedCommandProperty =
+            DependencyProperty.Register("KeyPressedCommand", typeof(ICommand), typeof(GameView), new PropertyMetadata(null));
+
+
+
         //public GameView()
         //{
         //    InitializeComponent();
@@ -38,6 +52,8 @@ namespace SnakeGame.Views
         }
         public async void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            MessageBox.Show(e.Key.ToString());
+
             if (Overlay.Visibility == Visibility.Visible)
             {
                 e.Handled = true;
@@ -51,6 +67,10 @@ namespace SnakeGame.Views
         }
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            if (KeyPressedCommand == null)
+                return;
+            KeyPressedCommand.Execute(null);
+
             MessageBox.Show(e.Key.ToString());
 
 

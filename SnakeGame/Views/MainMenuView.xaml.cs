@@ -24,5 +24,11 @@ namespace SnakeGame.Views
         {
             InitializeComponent();
         }
+
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

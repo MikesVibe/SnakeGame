@@ -16,7 +16,20 @@ using System.Windows.Shapes;
 
 namespace SnakeGame.ViewModel
 {
-    public class GameViewModel
+    public class GameViewModel : ObservableObject
     {
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show(e.Key.ToString());
+
+            //if (ViewModel == null) return;
+            ///* ... */
+            //ViewModel.HandleKeyDown(e);
+
+            //SnakeGame.Views.GameView.Window_PreviewKeyDown(sender, e)
+            //MessageBox.Show(e.Key.ToString());
+
+        }
     }
 }
