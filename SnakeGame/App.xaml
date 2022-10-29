@@ -13,12 +13,6 @@
             <SolidColorBrush x:Key="OverlayColor">#7f000000</SolidColorBrush>
             <FontFamily x:Key="MainFont">Assets/#Droid Sans Mono</FontFamily>
 
-            <DataTemplate DataType="{x:Type viewModel:MainMenuViewModel}">
-                <view:MainMenuView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
-                <view:GameView/>
-            </DataTemplate>
 
         </ResourceDictionary>
     </Application.Resources>

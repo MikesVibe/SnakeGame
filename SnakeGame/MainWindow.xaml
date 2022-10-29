@@ -17,8 +17,17 @@
         >
 
     <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewModel:MainMenuViewModel}">
+                <View:MainMenuView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+                <View:GameView/>
+            </DataTemplate>
+        </Grid.Resources>
         <View:MainMenuView DataContext="{Binding CurrentView}"/>
 
+        <ContentControl Content="{Binding CurrentViewModel}"/>
     </Grid>
 
 

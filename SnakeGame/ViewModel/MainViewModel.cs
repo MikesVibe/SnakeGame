@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnakeGame.Stores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,7 @@ namespace SnakeGame.ViewModel
 {
     class MainViewModel : ObservableObject
     {
-        //public RelayCommand MainMenuViewCommand{ get; set; }
-        public RelayCommand GameViewCommand{ get; set; }
 
-        public MainMenuViewModel MainMenuVM { get; set; }
-        public GameViewModel GameVM { get; set; }
-        private object _currentView;
 
         public object CurrentView
         {
@@ -38,26 +34,45 @@ namespace SnakeGame.ViewModel
                 OnPropertyChanged();
             }
         }
-
-
-
-
-        public MainViewModel()
+        public MainViewModel(NavigationStore navigationStore)
         {
-            MainMenuVM = new MainMenuViewModel();
-            GameVM = new GameViewModel();
-            CurrentView = MainMenuVM;
-            //CurrentView = GameVM;
-            //MainMenuViewCommand = new RelayCommand(o =>
-            //{
-            //    CurrentView = MainMenuVM;
-            //});
-
-            //GameViewCommand = new RelayCommand(o =>
-            //{
-            //    CurrentView = GameVM;
-            //});
+            _navigationStore = navigationStore;
         }
+
+
+
+        //public MainViewModel()
+        //{
+        //    MainMenuVM = new MainMenuViewModel();
+        //    GameVM = new GameViewModel();
+        //    CurrentView = MainMenuVM;
+        //    CurrentView = GameVM;
+        //    MainMenuViewCommand = new RelayCommand(o =>
+        //    {
+        //        CurrentView = MainMenuVM;
+        //    });
+
+        //    GameViewCommand = new RelayCommand(o =>
+        //    {
+        //        CurrentView = GameVM;
+        //    });
+        //}
+
+        ////public RelayCommand MainMenuViewCommand{ get; set; }
+
+        //public RelayCommand GameViewCommand { get; set; }
+
+        //public MainMenuViewModel MainMenuVM { get; set; }
+        //public GameViewModel GameVM { get; set; }
+
+        public ObservableObject CurrentViewModel => _navigationStore.CurrentViewModel;
+
+        private readonly NavigationStore _navigationStore;
+
+
+
+        private object _currentView;
+
 
 
     }

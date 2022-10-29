@@ -28,7 +28,7 @@ namespace SnakeGame.Views
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
-
+            MessageBox.Show("1");
         }
     }
 }

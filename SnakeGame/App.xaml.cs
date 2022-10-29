@@ -1,4 +1,5 @@
-﻿using SnakeGame.ViewModel;
+﻿using SnakeGame.Stores;
+using SnakeGame.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,16 +15,26 @@ namespace SnakeGame
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            _navigationStore = new NavigationStore();
+        }
         protected override void OnStartup(StartupEventArgs e)
         {
+            _navigationStore.CurrentViewModel = new MainMenuViewModel();
+            //_navigationStore.CurrentViewModel = new GameViewModel();
+
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_navigationStore)
             };
             MainWindow.Show();
 
 
             base.OnStartup(e);
         }
+
+        private readonly NavigationStore _navigationStore;
+
     }
 }
